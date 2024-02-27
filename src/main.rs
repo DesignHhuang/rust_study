@@ -1,3 +1,5 @@
+use num::complex::Complex;
+
 fn greet_world() {
     let southern_germany = "Grüß Gott!";
     let chinese = "世界，你好";
@@ -74,8 +76,42 @@ fn addition() {
     println!("{:.2}", forty_twos[0]);
 }
 
+fn position() {
+    // 二进制为00000010
+    let a: i32 = 2;
+    // 二进制为00000011
+    let b: i32 = 3;
+
+    println!("(a & b) value is {}", a & b);
+
+    println!("(a | b) value is {}", a | b);
+
+    println!("(a ^ b) value is {}", a ^ b);
+
+    println!("(!b) value is {} ", !b);
+
+    println!("(a << b) value is {}", a << b);
+
+    println!("(a >> b) value is {}", a >> b);
+
+    let mut a = a;
+    // 注意这些计算符除了!之外都可以加上=进行赋值 (因为!=要用来判断不等于)
+    a <<= b;
+    println!("(a << b) value is {}", a);
+}
+
+fn complex() {
+    let a = Complex { re: 2.1, im: -1.2 };
+    let b = Complex::new(11.1, 22.2);
+    let result = a + b;
+
+    println!("{} + {}i", result.re, result.im)
+}
+
 fn main() {
     greet_world();
     penguin();
-    addition()
+    addition();
+    position();
+    complex();
 }
