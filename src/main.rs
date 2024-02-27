@@ -1,4 +1,4 @@
-use num::complex::Complex;
+//use num::complex::Complex;
 
 fn greet_world() {
     let southern_germany = "Grüß Gott!";
@@ -100,12 +100,22 @@ fn position() {
     println!("(a << b) value is {}", a);
 }
 
-fn complex() {
+/* fn complex() {
     let a = Complex { re: 2.1, im: -1.2 };
     let b = Complex::new(11.1, 22.2);
     let result = a + b;
 
     println!("{} + {}i", result.re, result.im)
+} */
+
+fn plus_five(x: i32) -> i32 {
+    x + 5
+}
+
+fn text_fn() {
+    let x = plus_five(5);
+
+    println!("The value of x is: {}", x);
 }
 
 fn main() {
@@ -113,5 +123,6 @@ fn main() {
     penguin();
     addition();
     position();
-    complex();
+    //complex();
+    text_fn();
 }
